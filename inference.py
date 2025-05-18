@@ -5,7 +5,7 @@ from tqdm import tqdm
 import torch
 
 # Example: Using transformers pipeline for VQA (replace with your model as needed)
-from transformers import ViltProcessor, ViltForQuestionAnswering
+from transformers import BlipForQuestionAnswering, BlipProcessor
 
 def main():
     parser = argparse.ArgumentParser()
