@@ -20,7 +20,7 @@ def main():
     parser.add_argument('--image_dir', type=str, required=True, help='Path to image folder')
     parser.add_argument('--csv_path', type=str, required=True, help='Path to image-metadata CSV')
     args = parser.parse_args()
-
+    print("here")
     # Load metadata CSV
     df = pd.read_csv(args.csv_path) # .iloc[:100]
     df["image_name"] = df["image_name"].apply(clean_path)
@@ -31,7 +31,7 @@ def main():
     model = BlipForQuestionAnswering.from_pretrained(base_model_name)
     
     # Load LoRA adapter
-    adapter_path = "./merged_finetuning/blip-finetuned"
+    adapter_path = "subhamagarwal0512/BLIPfinetuned"
     model = PeftModel.from_pretrained(model, adapter_path)
     
     # Move to GPU if available
