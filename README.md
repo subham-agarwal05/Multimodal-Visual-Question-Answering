@@ -1,14 +1,16 @@
 # Multimodal Visual Question Answering
 
-This project implements a Visual Question Answering (VQA) system that leverages multimodal data—combining visual and textual information—to answer questions about images. It integrates advanced transformer-based models for both image and text processing, facilitating accurate and context-aware responses.
+This project implements fine-tuning of a model to implement a Visual Question Answering (VQA) system that leverages multimodal data—combining visual and textual information—to answer questions about images. It integrates advanced transformer-based models for both image and text processing, facilitating accurate and context-aware responses.
 
 ## 📁 Repository Structure
 
-* `inference.py` – Core script for performing inference using the trained VQA model.
-* `curation.ipynb` – Notebook for data curation and preprocessing tasks.
-* `requirements.txt` – Lists all Python dependencies required to run the project.
-* `merged_finetuning/` – Directory containing fine-tuned model checkpoints.
-* `BaselineEvaluations/` – Contains evaluation scripts and results for baseline models.([GitHub][1])
+* [`finetuning/`](./finetuning/) – Directory containing fine-tuned model adapters and related files.
+* [`BaselineEvaluations/`](./BaselineEvaluations/) – Baseline model evaluation scripts and results.
+* [`DataCuration/`](./DataCuration/) – Notebook for dataset creation and curation.
+* [`IMT2022110_027_562/`](./IMT2022110_027_562/) – Inference script and `requirements.txt` file.
+* [`Dataset.csv`](./Dataset.csv) – Dataset containing "question" and "answer" columns.
+* [`Report.pdf`](./Report.pdf) – Final project report with methodology and results.
+
 
 ## 🧠 Model Overview
 
@@ -33,16 +35,17 @@ Matcha, a specialized variant of Google’s Pix2Struct architecture, is incorpor
 2. **Install Dependencies**:
 
    ```bash
+   cd IMT2022110_027_562
    pip install -r requirements.txt
    ```
 
 3. **Download Pre-trained Models**:
 
-   Ensure that the `merged_finetuning/` directory contains the necessary fine-tuned model checkpoints. If not, download them from the provided sources or train the model as per the instructions.
+   Ensure that the `merged_finetuning/` directory contains the necessary fine-tuned model adapters. If not, download them from the provided sources or train the model as per the instructions.
 
 ### Running Inference
 
-The `inference.py` script is designed to answer questions based on input images. It processes the image and question, feeds them through the multimodal model, and outputs the predicted answer.([GitHub][1], [GitHub][2])
+The `inference.py` script is designed to answer questions based on input images. It processes the image and question, feeds them through the multimodal model, and outputs the predicted answer.
 
 **Usage**:
 
@@ -57,8 +60,8 @@ The script will generate the answers in results.csv
 ### Notes
 
 * Ensure that the image file exists at the specified path and is in a supported format (e.g., JPG, PNG).
-* The question should be a clear and concise natural language query related to the image content.([GitHub][2])
+* The question should be a clear and concise natural language query related to the image content.
 
 ## 📊 Evaluation
 
-The `BaselineEvaluations/` directory contains scripts and results for evaluating the performance of baseline models on standard VQA datasets. These evaluations help in benchmarking the effectiveness of the implemented model.
+The `BaselineEvaluations/` directory contains scripts and results for evaluating the performance of baseline models. These evaluations help in benchmarking the effectiveness of the implemented model.
