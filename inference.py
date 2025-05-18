@@ -34,6 +34,7 @@ def main():
     for idx, row in tqdm(df.iterrows(), total=len(df)):
         image_path = f"{args.image_dir}/{row['image_name']}"
         question = str(row['question'])
+        question = f"{question} Answer in one word."
         try:
             image = Image.open(image_path).convert("RGB")
             encoding = processor(image, question, return_tensors="pt").to(device)
