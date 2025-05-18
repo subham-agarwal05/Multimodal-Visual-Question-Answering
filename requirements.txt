@@ -14,3 +14,4 @@ torchmetrics
 tqdm
 argparse
 Pillow
+numpy
