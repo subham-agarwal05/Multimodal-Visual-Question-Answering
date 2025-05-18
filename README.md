@@ -1,7 +1,3 @@
-Certainly! Here's a comprehensive `README.md` for the [Multimodal-Visual-Question-Answering](https://github.com/subham-agarwal05/Multimodal-Visual-Question-Answering/tree/main) repository, with a particular emphasis on the `inference.py` script:
-
----
-
 # Multimodal Visual Question Answering
 
 This project implements a Visual Question Answering (VQA) system that leverages multimodal data—combining visual and textual information—to answer questions about images. It integrates advanced transformer-based models for both image and text processing, facilitating accurate and context-aware responses.
